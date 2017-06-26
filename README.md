@@ -4,7 +4,7 @@ Simple gulp starter for front-end projects.
 ## Basic elements
 
 - SASS compiler (please use `.scss` extension or change extension in `gulpfile.js`)
-- CSS minify
+- CSS & JS minify
 - JS concat
 - JSHint (for ES6)
 - Image optimization
@@ -16,18 +16,17 @@ Simple gulp starter for front-end projects.
 
 ## Instruction
 1. Fork this repo. Check [GitHub Help](https://help.github.com/articles/fork-a-repo/) if you need help.
-2. Install npm packages: `npm install`.
-3. Put your files in directories inside `src`.
-4. Start using gulp: `gulp`.
+2. If you don't have Node.js, install it from https://nodejs.org/en/.
+3. If you don't have gulp, install it: `npm install -g gulp gulp-cli`.
+4. Install npm packages: `npm install`.
+5. Put your files in directories inside `src`.
+6. Start using gulp: `gulp`.
 
 ## Q&A
 
-### Why uglify() is commented?
-During testing [gulpfile.js](gulpfile.js), `gulp-uglify` was throwing an error (check details [here](https://gist.github.com/WojtekWernicki/5bb1a1722ad94ff7c2cbd1f32169188d)). I decided to disable it and `gulp-rename` the line above. JS files will be concated, but won't be minified. Probably this is fault of my computer (Windows 10), so if you want to try does your Node & gulp can minify JS file, just uncomment these two lines and run `gulp`. If you know how to deal with this problem, please make pull request.
-
 ### Why `gulp-watch` doesn't trigger on new images?
 
-I don't know why ¯ \\\_(ツ)_/¯ You need to restart gulp, then `gulp-watch` will optimize your photos. If you know how track new photos, please make pull request.
+I don't know why ¯\\\_(ツ)_/¯ You need to restart gulp, then `gulp-watch` will optimize your photos. If you know how track new photos, please make pull request.
 
 ### What does `.keep` file mean?
 

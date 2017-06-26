@@ -4,6 +4,7 @@ const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const jshint = require('gulp-jshint');
+const pump = require('pump');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 
@@ -28,18 +29,23 @@ gulp.task('sass', function() {
 });
 
 // Concat and uglify JavaScript files
-gulp.task('uglifyJS', function() {
+gulp.task('concat', function() {
     return gulp.src('src/js/*.js')
     .pipe(plumber({ errorHandler: onError }))
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(concat('script.js'))
-    // .pipe(rename({suffix: '.min'}))
-    // .pipe(uglify())
     .pipe(gulp.dest('dist/js'));
 });
 
-// Why uglify() is commented? Check README file.
+gulp.task('compress', function(cb) {
+    pump([
+        gulp.src('dist/js/script.js'),
+        uglify(),
+        rename({suffix: '.min'}),
+        gulp.dest('dist/js')
+    ], cb);
+});
 
 // Optimize images
 gulp.task('images', function() {
@@ -51,9 +57,10 @@ gulp.task('images', function() {
 // Watch task
 gulp.task('watch', function() {
     gulp.watch('src/scss/**/*.scss', ['sass']);
-    gulp.watch('src/js/*.js', ['uglifyJS']);
+    gulp.watch('src/js/*.js', ['concat']);
+    gulp.watch('dist/js/*.js', ['compress']);
     gulp.watch('src/img/*.*', ['images']);
 })
 
 // Default task
-gulp.task('default', ['sass', 'uglifyJS', 'images', 'watch']);
+gulp.task('default', ['sass', 'concat', 'compress', 'images', 'watch']);
