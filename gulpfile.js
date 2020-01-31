@@ -23,7 +23,7 @@ gulp.task('sass', function() {
     .pipe(plumber({ errorHandler: onError }))
     .pipe(sass({outputStyle: 'expanded'}))
     .pipe(gulp.dest('src/css'))
-    .pipe(cleanCSS())
+    .pipe(cleanCSS()) 
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('dist/css'))
 });
@@ -49,9 +49,15 @@ gulp.task('compress', function(cb) {
 
 // Optimize images
 gulp.task('images', function() {
-    return gulp.src('src/img/*.*')
+    return gulp.src('src/img/**/*.{gif,jpg,png,svg}')
     .pipe(imagemin({optimizationLevel: 7, progressive: true}))
     .pipe(gulp.dest('dist/img'));
+});
+
+
+gulp.task("copy", function () {
+  gulp.src(["src/**/*.{html,php}"])
+      .pipe(gulp.dest("dist"));
 });
 
 // Watch task
@@ -59,8 +65,10 @@ gulp.task('watch', function() {
     gulp.watch('src/scss/**/*.scss', ['sass']);
     gulp.watch('src/js/*.js', ['concat']);
     gulp.watch('dist/js/*.js', ['compress']);
-    gulp.watch('src/img/*.*', ['images']);
+    gulp.watch('src/img/*', ['images']);
+    gulp.watch('src/*.{html,php}', ['copy']);
 })
-
+  
 // Default task
-gulp.task('default', ['sass', 'concat', 'compress', 'images', 'watch']);
+gulp.task('default', ['sass', 'concat', 'compress', 'images', 'watch', 'copy']);
+ 

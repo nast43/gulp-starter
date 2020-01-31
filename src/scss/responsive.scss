@@ -1,0 +1,45 @@
+@media (max-width: 600px) {
+    .slog h3 {
+        font-size: 25px;
+        line-height: 22px;
+    }
+    .slog h1 {
+        font-size: 41px;
+    }
+
+
+    .decor-project-anim-v3, .decor-project-anim-v11, .decor-project-anim-v8, .decor-project-anim-v1{
+        display: none;
+    }
+
+    .decor-project-anim-v2 {
+        top: 18vh;
+        left: 6vw;
+        width: 27%;
+    }
+
+    .decor-project-anim-v5 {
+        top: 77vh;
+        left: 58vw;
+        width: 50%;
+    }
+
+    .decor-project-anim-v10 {
+        top: 8vh;
+        left: 57vw;
+        width: 50%;
+    }
+
+    .decor-project-anim-v7 {
+        top: 73vh;
+        left: -5vw;
+        width: 44%;
+    } 
+
+    .decor-project-anim-v4 {
+        top: 97vh;
+        left: 30vw;
+        width: 21%;
+    } 
+
+}
