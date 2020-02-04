@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
@@ -7,7 +8,6 @@ const jshint = require('gulp-jshint');
 const pump = require('pump');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
-
 const plumber = require('gulp-plumber');
 const gutil = require('gulp-util');
 
@@ -16,6 +16,15 @@ let onError = function (err) {
     gutil.beep();
     this.emit('end');
 };
+
+// Static server
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./dist"
+        }
+    });
+});
 
 // Compile SCSS files and minify CSS files
 gulp.task('sass', function() {
@@ -70,5 +79,5 @@ gulp.task('watch', function() {
 })
   
 // Default task
-gulp.task('default', ['sass', 'concat', 'compress', 'images', 'watch', 'copy']);
- 
+gulp.task('default', ['sass', 'concat', 'compress', 'images', 'watch', 'copy', 'browser-sync']);
+  
