@@ -10,6 +10,7 @@ const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const plumber = require('gulp-plumber');
 const gutil = require('gulp-util');
+const reload = browserSync.reload;
 
 let onError = function (err) {
     console.log('An error occurred:', gutil.colors.magenta(err.message));
@@ -25,6 +26,7 @@ gulp.task('browser-sync', function() {
         }
     });
 });
+
 
 // Compile SCSS files and minify CSS files
 gulp.task('sass', function() {
@@ -69,15 +71,21 @@ gulp.task("copy", function () {
       .pipe(gulp.dest("dist"));
 });
 
+ 
+
 // Watch task
 gulp.task('watch', function() {
-    gulp.watch('src/scss/**/*.scss', ['sass']);
-    gulp.watch('src/js/*.js', ['concat']);
+    gulp.watch('src/scss/**/*.scss', ['sass', reload]);
+    gulp.watch('src/js/*.js', ['concat', reload]);
     gulp.watch('dist/js/*.js', ['compress']);
     gulp.watch('src/img/*', ['images']);
-    gulp.watch('src/*.{html,php}', ['copy']);
+    gulp.watch('src/*.{html,php}', ['copy', reload]);
 })
   
+
+ 
+
+
 // Default task
 gulp.task('default', ['sass', 'concat', 'compress', 'images', 'watch', 'copy', 'browser-sync']);
   

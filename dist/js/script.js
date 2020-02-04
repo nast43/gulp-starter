@@ -1,13 +1,14 @@
+window.addEventListener("deviceorientation", orientation, true);
 
-
-
-
-
-
-
-
-
-
+function orientation(event) {
+  var x = event.beta;
+  var y = event.gamma;
+  
+  $('.square').css({
+    'top':x,
+    'left': y
+  });
+}
 // ==== Cursor change circle ================================
 var $follow = $('.circle-follow');
  
@@ -85,3 +86,4 @@ function parallaxIt(e, target, movement){
     ease: Power2.easeOut
   });
 } 
+

@@ -37,3 +37,4 @@ function parallaxIt(e, target, movement){
     ease: Power2.easeOut
   });
 } 
+
