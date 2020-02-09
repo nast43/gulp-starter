@@ -41,5 +41,28 @@
         left: 30vw;
         width: 21%;
     } 
+    .short-ab {
+        grid-template-columns: 1fr;
+    }
+ 
+    h2 {
+        font-size: 32px;
+        letter-spacing: .08em;
+    }
 
-}
+    .contact-form {
+        margin-top: 26px;
+        margin-bottom: 76px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 36px;
+    }
+
+    .contact-form img {
+        width: 100%;
+    }
+
+    #content-frame {
+        padding: 28px 5vw 0 5vw;
+    }
+} 
