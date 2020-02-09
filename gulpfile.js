@@ -89,3 +89,6 @@ gulp.task('watch', function() {
 // Default task
 gulp.task('default', ['sass', 'concat', 'compress', 'images', 'watch', 'copy', 'browser-sync']);
   
+// Build tast (Netlixy)
+gulp.task('build', ['sass', 'concat', 'compress', 'images', 'copy']);
+  
