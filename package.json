@@ -31,10 +31,12 @@
     "gulp-uglify": "^2.1.2",
     "gulp-util": "^3.0.8",
     "jshint": "^2.9.4",
-    "browser-sync": "2.26.7"
+    "browser-sync": "2.26.7",
+    "gulp-webp": "4.0.1"
   },
   "devDependencies": {
     "gulp-clean-css": "^3.3.1",
+    "gulp-webp": "^4.0.1",
     "pump": "^1.0.2"
   }
 }

@@ -48,17 +48,16 @@ function logoSwitch () {
   
   logoSwitch();
 // ==== Paralax object home ================================
-gsap.from(".circle-follow", {duration:5, opacity: 0, delay: 3,});
-gsap.from(".slog", {duration:5, opacity: 0, delay: 0.5,});
-gsap.from("#logo", {duration:8, opacity: 0, delay: 2.4,});
-gsap.from("nav", {duration:8, opacity: 0, delay: 2.4,});
-gsap.from(".mov", {duration:8, opacity: 0, delay: 2.4,});         
+gsap.from(".circle-follow", {duration:1, opacity: 0, delay: 3,});
+gsap.from(".slog", {duration:3, opacity: 0, delay: 0.2,});
+gsap.from("#logo", {duration:2, opacity: 0, delay: 2.4,});
+gsap.from("nav", {duration:2, opacity: 0, delay: 2.4,});
+gsap.from(".mov", {duration:2, opacity: 0, delay: 2.4,});         
  
 var timeout;
 $('body').mousemove(function(e){
   if(timeout) clearTimeout(timeout);
-  setTimeout(callParallax.bind(null, e), 200);
-   
+  setTimeout(callParallax.bind(null, e), 200); 
 });
 
 function callParallax(e){
@@ -87,3 +86,4 @@ function parallaxIt(e, target, movement){
   });
 } 
 
+ 
