@@ -12,6 +12,7 @@
     <title>Piotr Jackowski - Foront-End Developer, get Stard work toghether <3</title>
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/responsive.min.css">
+    <meta name="robots" content="noindex">
 </head>
 <body>   
     <div class="circle-follow"></div> 
@@ -56,12 +57,12 @@
                         <li> <a href="mailto:kontakt@piotrjackowski.pl">kontakt@piotrjackowski.pl</a> </li>
                     </ul>
 
-                    <form id="contact" name="contact" method="POST" data-netlify="true" action="succes-form.html">
+                    <form id="contact" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="succes-form.html">
                         <fieldset>
                             <strong>Full name*</strong>
                           <input placeholder="Your name" type="text" name="name">
                         </fieldset>
-                        <fieldset>
+                        <fieldset> 
                             <strong>Email Adress*</strong>
                           <input placeholder="Your Email Address" type="email" name="email" required>
                         </fieldset>

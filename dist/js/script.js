@@ -62,15 +62,15 @@ $('body').mousemove(function(e){
 
 function callParallax(e){
   parallaxIt(e, '.mov.decor-project-anim-v1', -13);
-  parallaxIt(e, '.mov.decor-project-anim-v2', -24);
+  parallaxIt(e, '.mov.decor-project-anim-v2', -74);
   parallaxIt(e, '.mov.decor-project-anim-v3', -15);
   parallaxIt(e, '.mov.decor-project-anim-v4', -19);
-  parallaxIt(e, '.mov.decor-project-anim-v5', -15);
+  parallaxIt(e, '.mov.decor-project-anim-v5', -95);
   parallaxIt(e, '.mov.decor-project-anim-v6', -35);
-  parallaxIt(e, '.mov.decor-project-anim-v7', -37);
+  parallaxIt(e, '.mov.decor-project-anim-v7', -77);
   parallaxIt(e, '.mov.decor-project-anim-v8', -50);
   parallaxIt(e, '.mov.decor-project-anim-v9', -18);
-  parallaxIt(e, '.mov.decor-project-anim-v10', -61);
+  parallaxIt(e, '.mov.decor-project-anim-v10', -161);
   parallaxIt(e, '.mov.decor-project-anim-v11', -49);
 }
 
